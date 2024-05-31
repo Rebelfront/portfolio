@@ -20,7 +20,7 @@ export default defineConfig({
     ViteFonts({
       google: {
         families: [{
-          name: 'Roboto',
+          name: 'Poppins',
           styles: 'wght@100;300;400;500;700;900',
         }],
       },
@@ -30,6 +30,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@imgs': fileURLToPath(new URL('./src/assets/imgs', import.meta.url)),
     },
     extensions: [
       '.js',

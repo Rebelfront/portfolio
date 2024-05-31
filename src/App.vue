@@ -5,6 +5,8 @@
         <Intro />
         <AboutMe />
         <Skills />
+        <Work />
+        <Contact />
     </v-main>
     <v-footer>
     </v-footer>

@@ -3,11 +3,11 @@
         <v-container>
             <v-row align="center">
                 <v-col cols="6">
-                    <h1 class="text-h2 font-weight-black">Arnaud REBEL</h1>
-                    <h2 class="text-h4 font-weight-black">Développeur Web Frontend</h2>
+                    <h1 class="text-h2 poppins-black">Arnaud REBEL</h1>
+                    <h2 class="text-h4 poppins-black">Développeur Web Frontend</h2>
                 </v-col>
                 <v-col cols="6">
-                    <img class="w-100" src="../assets/imgs/backgrounds/bg-dev.svg" alt="">
+                    <img class="w-100" src="@imgs/backgrounds/bg-dev.svg" alt="">
                 </v-col>
             </v-row>
         </v-container>
