@@ -1,13 +1,13 @@
 <template>
-    <section id="skills" class="d-flex justify-center align-center">
+    <section id="skills" class="d-flex justify-center align-center mb-15">
         <v-container>
-                <h2 class="text-h3 poppins-black text-decoration-underline mb-10">Mes compétences</h2>
-                <p class="mb-3">Voici les technologies que je maitrise !</p>
-                <ul class="d-flex">
-                    <li v-for="skill in skills">
+                <h2 class="text-h3 poppins-medium mb-5">Compétences</h2>
+                <p class="mb-10">Voici les technologies que je maitrise !</p>
+                <v-row>
+                    <v-col cols="1" v-for="skill in skills">
                         <i :class="skill.iconClass"></i>
-                    </li>
-                </ul>
+                    </v-col>
+                </v-row>
         </v-container>
     </section>
 </template>

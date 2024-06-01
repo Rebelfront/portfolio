@@ -31,6 +31,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@imgs': fileURLToPath(new URL('./src/assets/imgs', import.meta.url)),
+      '@files': fileURLToPath(new URL('./src/assets/files', import.meta.url)),
     },
     extensions: [
       '.js',

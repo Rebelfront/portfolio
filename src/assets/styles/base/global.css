@@ -13,3 +13,13 @@ i {
 p {
     color: #c2c2c2;
 }
+
+.text-h3::after {
+    content: '';
+    display: block;
+    border-radius: 5px;
+    background-color: #5C6BC0;
+    width: 55px;
+    height: 6px;
+    margin-top: 6px;
+}

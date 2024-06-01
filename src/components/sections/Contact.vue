@@ -1,23 +1,21 @@
 <template>
     <section id="contact" class="d-flex justify-center align-center">
         <v-container>
-            <h2 class="text-h3 poppins-black text-decoration-underline mb-10">Contact</h2>
-            <p class="mb-6">Vous êtes intéréssé par mon profil ? N'hésitez pas à me contacter !</p>
-            <div class="d-flex flex-column align-start">
-                <v-btn variant="plain" class="mr-6" href="tel:+33647858942">
-                    <v-icon size="30" aria-hidden="true" icon="mdi-phone-forward"></v-icon>
-                    0647858942
+            <h2 class="text-h3 poppins-medium mb-10">Contact</h2>
+            <p class="mb-15">Vous êtes intéréssé par mon profil ? N'hésitez pas à me contacter !</p>
+            <div class="d-flex">
+                <v-btn class="mr-6 bg-indigo-lighten-1" href="tel:+33647858942">
+                    <v-icon size="30" aria-hidden="true" icon="mdi-phone"></v-icon>
                 </v-btn>
-                <v-btn variant="plain" class="mr-6" href="mailto:arnaud.rebel@gmail.com">
+                <v-btn class="mr-6 bg-indigo-lighten-1" href="mailto:arnaud.rebel@gmail.com">
                     <v-icon size="30" aria-hidden="true" icon="mdi-email"></v-icon>
-                    arnaud.rebel@gmail.com
                 </v-btn>
-                <v-btn variant="plain" class="mr-6" href="https://www.linkedin.com/in/arnaudrebel/">
-                    <v-icon size="30" aria-hidden="true" icon="mdi-linkedin"></v-icon>
+                <v-btn class="mr-6 bg-indigo-lighten-1" href="https://www.linkedin.com/in/arnaudrebel/">
+                    <v-icon class="mr-2" size="30" aria-hidden="true" icon="mdi-linkedin"></v-icon>
                     LinkedIn
                 </v-btn>
-                <v-btn variant="plain" href="https://github.com/Rebelfront">
-                    <v-icon size="30" aria-hidden="true" icon="mdi-github"></v-icon>
+                <v-btn class="bg-indigo-lighten-1" href="https://github.com/Rebelfront">
+                    <v-icon  class="mr-2"size="30" aria-hidden="true" icon="mdi-github"></v-icon>
                     Github
                 </v-btn>
             </div>
