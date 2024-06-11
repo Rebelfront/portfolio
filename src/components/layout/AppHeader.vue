@@ -4,13 +4,21 @@
             <v-app-bar-title>
                 <span class="font-weight-bold">Arnaud REBEL</span> <span class="text-indigo-lighten-1 font-weight-bold">Dev</span>
             </v-app-bar-title>
-            <v-btn :class="anchor.highlight && 'bg-indigo-lighten-1'" v-for="anchor in headerAnchors" :href="anchor.link">{{ anchor.text }}</v-btn>
+            <v-btn 
+                :class="anchor.highlight && 'bg-indigo-lighten-1'" 
+                v-for="anchor in headerAnchors" 
+                @click="goTo(anchor.link, { offset: -100})">
+                    {{ anchor.text }}
+            </v-btn>
         </v-container>
     </v-app-bar>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useGoTo } from 'vuetify';
+
+const goTo = useGoTo();
 
 const headerAnchors = ref([
     {
