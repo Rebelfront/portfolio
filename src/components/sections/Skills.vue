@@ -1,13 +1,15 @@
 <template>
     <section id="skills" class="d-flex justify-center align-center mb-15">
         <v-container>
-                <h2 class="text-h3 poppins-medium mb-5">Compétences</h2>
-                <p class="mb-10">Voici les technologies que je maitrise !</p>
-                <v-row>
-                    <v-col cols="1" v-for="skill in skills">
-                        <i :class="skill.iconClass"></i>
-                    </v-col>
-                </v-row>
+            <h2 class="text-h3 poppins-medium mb-5">Compétences</h2>
+            <p class="mb-10">Les technologies que je maitrise:</p>
+            <v-row class="mb-10">
+                <v-col cols="1" v-for="skill in skills">
+                    <i :class="skill.iconClass"></i>
+                </v-col>
+            </v-row>
+            <p>Je me forme en ce moment sur:</p>
+            <i class="devicon-nuxtjs-plain-wordmark colored nuxt-icon"></i>
         </v-container>
     </section>
 </template>

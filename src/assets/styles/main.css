@@ -1,3 +1,4 @@
 /* BASE */
 @import "./base/global.css";
 @import "./base/utils.css";
+@import "./base/specific.css";

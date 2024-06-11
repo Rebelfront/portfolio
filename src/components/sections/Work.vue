@@ -1,20 +1,20 @@
 <template>
     <section id="work" class="d-flex justify-center align-center mb-15">
         <v-container>
-            <h2 class="text-h3 poppins-medium mb-10">Réalisations</h2>
-            <p class="mb-6">Voici quelques un des projets web sur lesquels j'ai travaillé en tant que développeur front-end.</p>
+            <h2 class="text-h3 poppins-medium mb-10">Projets</h2>
+            <p class="mb-6">Les projets web sur lesquels je travaille sur mon temps libre.</p>
             <v-row align="center">
-                <v-col v-for="card in workCards" cols="6">
-                    <v-card :image="card.image">
+                <v-col v-for="card in workCards" cols="3">
+                    <v-card hover :image="card.image">
                         <v-card-item>
                             <v-card-title>{{ card.title }}</v-card-title>
-                            <v-card-subtitle>{{ card.subtitle }}</v-card-subtitle>
+                            <v-card-subtitle v-if="card.subtitle">{{ card.subtitle }}</v-card-subtitle>
                         </v-card-item>
                         <v-card-text>
                             {{ card.description }}
                         </v-card-text>
                         <v-card-actions>
-                            <v-btn class="bg-indigo-lighten-1" :href="card.liveUrl">Voir le site</v-btn>
+                            <v-btn v-if="card.liveUrl" class="bg-indigo-lighten-1" :href="card.liveUrl">Voir le site</v-btn>
                             <v-btn v-if="card.codeUrl" class="bg-indigo-lighten-1" :href="card.codeUrl">Voir le code</v-btn>
                         </v-card-actions>
                     </v-card>
@@ -26,24 +26,25 @@
 
 <script setup lang="ts">
     import { ref } from 'vue';
+    import introBg from '@imgs/backgrounds/bg-intro.jpg';
 
     const workCards = ref([
         {
-            title: "",
-            subtitle: "Comparateur d'assurances de prêt immobilier",
-            description: "Technos utilisées: Vue.js 2, Twig, Bootstrap 5",
-            image: "@imgs/backgrounds/bg-magnolia.jpg",
-            liveUrl: "https://www.magnolia.fr/",
-            codeUrl: ""
+            title: "Mon portfolio",
+            subtitle: "",
+            description: "Technos: Vue.js 3 (composition API), Vite, Vuetify, Vercel",
+            image: introBg,
+            liveUrl: "",
+            codeUrl: "https://www.magnolia.fr/"
         },
         {
-            title: "",
-            subtitle: "Comparateur d'assurances de prêt immobilier",
-            description: "Technos utilisées: Vue.js 2, Twig, Bootstrap 5",
-            image: "@imgs/backgrounds/bg-magnolia.jpg",
-            liveUrl: "https://www.magnolia.fr/",
+            title: "Mon prochain projet",
+            subtitle: "Work in progress",
+            description: "Technos: Vue.js 3, Nuxt 3, tailwind",
+            image: introBg,
+            liveUrl: "",
             codeUrl: ""
-        }
+        },
     ])
 
 </script>
