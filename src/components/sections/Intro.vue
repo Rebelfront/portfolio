@@ -6,24 +6,19 @@
         <section id="home" class="d-flex justify-center align-center fill-height">
             <v-container>
                 <v-row align="end">
-                    <v-col cols="7">
+                    <v-col md="7">
                         <p class="text-white poppins-medium mb-3">Bonjour ! Je suis</p>
-                        <h2 class="text-h1 poppins-bold mb-5">Arnaud <span class="text-indigo-lighten-1">Rebel</span></h2>
+                        <h2 class="text-md-h1 text-h2 poppins-bold mb-5">Arnaud <span class="text-indigo-lighten-1">Rebel</span></h2>
                         <h1 class="text-h5 poppins-bold mb-7">Développeur Web Frontend <span class="text-indigo-lighten-1">.</span></h1>
-                        <div class="d-flex">
-                            <v-btn class="mr-6" href="tel:+33647858942">
-                                <v-icon size="30" aria-hidden="true" icon="mdi-phone"></v-icon>
-                            </v-btn>
-                            <v-btn class="mr-6" href="mailto:arnaud.rebel@gmail.com">
-                                <v-icon size="30" aria-hidden="true" icon="mdi-email"></v-icon>
-                            </v-btn>
-                            <v-btn class="mr-6" href="https://www.linkedin.com/in/arnaudrebel/">
-                                <v-icon class="mr-2" size="30" aria-hidden="true" icon="mdi-linkedin"></v-icon>
-                                LinkedIn
-                            </v-btn>
-                            <v-btn href="https://github.com/Rebelfront">
-                                <v-icon  class="mr-2"size="30" aria-hidden="true" icon="mdi-github"></v-icon>
-                                Github
+                        <div class="d-flex flex-wrap">
+                            <v-btn 
+                                v-for="btn in btns" 
+                                class="mr-6" 
+                                :href="btn.href"
+                                :target="btn.external ? '_blank' : '_self'"
+                                :aria-label="btn.ariaLabel"
+                            >
+                                <v-icon size="30" aria-hidden="true" :icon="btn.icon"></v-icon>
                             </v-btn>
                         </div>
                     </v-col>
@@ -34,6 +29,33 @@
 </template>
 
 <script setup lang="ts">
-import bgIntro from "@imgs/backgrounds/bg-intro.jpg";
-    
+    import bgIntro from "@imgs/backgrounds/bg-intro.jpg";
+    import { ref } from "vue";
+
+    const btns = ref([
+        {
+            href: "tel:+33647858942",
+            icon: "mdi-phone",
+            ariaLabel: "me téléphoner",
+            external: false
+        },
+        {
+            href: "mailto:arnaud.rebel@gmail.com",
+            icon: "mdi-email",
+            ariaLabel: "m'envoyer un mail",
+            external: false
+        },
+        {
+            href: "https://www.linkedin.com/in/arnaudrebel/",
+            icon: "mdi-linkedin",
+            ariaLabel: "aller sur mon linkedin - ouvre un nouvel onglet",
+            external: true
+        },
+        {
+            href: "https://github.com/Rebelfront",
+            icon: "mdi-github",
+            ariaLabel: "aller sur mon profil github - ouvre un nouvel onglet",
+            external: true
+        }
+    ]);
 </script>

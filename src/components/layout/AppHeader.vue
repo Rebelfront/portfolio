@@ -1,17 +1,40 @@
 <template>
     <v-app-bar>
         <v-container class="mx-auto d-flex align-center justify-center">
-            <v-app-bar-title>
-                <span class="font-weight-bold">Arnaud REBEL</span> <span class="text-indigo-lighten-1 font-weight-bold">Dev</span>
+            <v-app-bar-nav-icon 
+                variant="text" 
+                @click.stop="drawer = !drawer"
+                v-if="$vuetify.display.smAndDown"
+            >
+            </v-app-bar-nav-icon>
+            <v-app-bar-title class="text-uppercase">
+                <span class="font-weight-bold">Arnaud rebel</span> <span class="text-indigo-lighten-1 font-weight-bold">dev</span>
             </v-app-bar-title>
-            <v-btn 
-                :class="anchor.highlight && 'bg-indigo-lighten-1'" 
-                v-for="anchor in headerAnchors" 
-                @click="goTo(anchor.link, { offset: -100})">
+            <template v-if="$vuetify.display.mdAndUp">
+                <v-btn 
+                    :class="anchor.highlight && 'bg-indigo-lighten-1'" 
+                    v-for="anchor in headerAnchors" 
+                    @click="goTo(anchor.link, { offset: -100})"
+                >
                     {{ anchor.text }}
-            </v-btn>
+                </v-btn>
+            </template>
         </v-container>
     </v-app-bar>
+    <v-navigation-drawer
+        v-if="$vuetify.display.smAndDown"
+        v-model="drawer"    
+    >
+        <div class="d-flex flex-column">
+            <v-btn 
+            :class="anchor.highlight && 'bg-indigo-lighten-1'" 
+            v-for="anchor in headerAnchors" 
+            @click="goTo(anchor.link, { offset: -100})"
+        >
+            {{ anchor.text }}
+        </v-btn>
+        </div>
+    </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
@@ -19,6 +42,7 @@ import { ref } from 'vue';
 import { useGoTo } from 'vuetify';
 
 const goTo = useGoTo();
+const drawer = ref(false);
 
 const headerAnchors = ref([
     {

@@ -2,9 +2,9 @@
     <section id="work" class="d-flex justify-center align-center mb-15">
         <v-container>
             <h2 class="text-h3 poppins-medium mb-10">Projets</h2>
-            <p class="mb-6">Les projets web sur lesquels je travaille sur mon temps libre.</p>
+            <h3 class="mb-6">Les projets web sur lesquels je travaille sur mon temps libre :</h3>
             <v-row align="center">
-                <v-col v-for="card in workCards" cols="3">
+                <v-col v-for="card in workCards" cols="12">
                     <v-card hover :image="card.image">
                         <v-card-item>
                             <v-card-title>{{ card.title }}</v-card-title>
@@ -32,7 +32,7 @@
         {
             title: "Mon portfolio",
             subtitle: "",
-            description: "Technos: Vue.js 3 (composition API), Vite, Vuetify, Vercel",
+            description: "Technos: Vue.js 3 (composition API), Typescript, Vuetify, Vercel",
             image: introBg,
             liveUrl: "",
             codeUrl: "https://www.magnolia.fr/"
