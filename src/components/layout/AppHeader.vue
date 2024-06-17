@@ -9,7 +9,7 @@
             </v-app-bar-nav-icon>
             <v-app-bar-title class="text-uppercase">
                 <v-btn @click="goTo('#home')">
-                    <span class="font-weight-bold">Arnaud rebel</span> <span class="text-indigo-lighten-1 font-weight-bold">dev</span>
+                    <span class="font-weight-bold">Arnaud rebel</span>&nbsp;<span class="text-indigo-lighten-1 font-weight-bold">dev</span>
                 </v-btn>
             </v-app-bar-title>
             <template v-if="$vuetify.display.mdAndUp">
