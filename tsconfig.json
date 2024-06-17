@@ -9,8 +9,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@models/*": ["./src/models/*"],
-      "@components/*": ["src/components/*"],
-      "@imgs/*": ["src/assets/imgs/*"],
+      "@components/*": ["./src/components/*"],
+      "@imgs/*": ["./src/assets/imgs/*"]
     },
     "resolveJsonModule": true,
     "types": [

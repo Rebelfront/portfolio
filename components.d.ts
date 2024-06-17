@@ -13,6 +13,8 @@ declare module 'vue' {
     Contact: typeof import('./src/components/sections/Contact.vue')['default']
     ContactLinks: typeof import('./src/components/ContactLinks.vue')['default']
     Intro: typeof import('./src/components/sections/Intro.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Skills: typeof import('./src/components/sections/Skills.vue')['default']
     Work: typeof import('./src/components/sections/Work.vue')['default']
   }

@@ -1,15 +1,8 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <v-app>
     <AppHeader />
-    <v-main class="pb-10">
-        <Intro />
-        <AboutMe />
-        <Skills />
-        <Work />
-        <Contact />
+    <v-main class="pb-10 d-flex flex-column">
+       <RouterView />
     </v-main>
     <AppFooter />
   </v-app>
