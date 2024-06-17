@@ -1,3 +1,10 @@
 .nuxt-icon {
     font-size: 100px;
 }
+
+.scroll-down-btn {
+    position: absolute !important;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}

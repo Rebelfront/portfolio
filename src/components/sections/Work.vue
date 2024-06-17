@@ -4,7 +4,7 @@
             <h2 class="text-h3 poppins-medium mb-10">Projets</h2>
             <h3 class="mb-6">Les projets web sur lesquels je travaille sur mon temps libre :</h3>
             <v-row align="center">
-                <v-col v-for="card in workCards" cols="12">
+                <v-col v-for="card in workCards" cols="12" md="5">
                     <v-card hover :image="card.image">
                         <v-card-item>
                             <v-card-title>{{ card.title }}</v-card-title>
@@ -27,23 +27,24 @@
 <script setup lang="ts">
     import { ref } from 'vue';
     import introBg from '@imgs/backgrounds/bg-intro.jpg';
+    import { workCard } from '@/models/workCard.model';
 
-    const workCards = ref([
+    const workCards = ref<workCard[]>([
         {
             title: "Mon portfolio",
-            subtitle: "",
+            subtitle: null,
             description: "Technos: Vue.js 3 (composition API), Typescript, Vuetify, Vercel",
             image: introBg,
-            liveUrl: "",
+            liveUrl: null,
             codeUrl: "https://www.magnolia.fr/"
         },
         {
-            title: "Mon prochain projet",
+            title: "Portfolio de musicien",
             subtitle: "Work in progress",
-            description: "Technos: Vue.js 3, Nuxt 3, tailwind",
-            image: introBg,
-            liveUrl: "",
-            codeUrl: ""
+            description: "Technos: Vue.js 3(composition API), tailwind",
+            image: undefined,
+            liveUrl: null,
+            codeUrl: null
         },
     ])
 

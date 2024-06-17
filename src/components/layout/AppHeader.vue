@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar>
+    <v-app-bar id="home">
         <v-container class="mx-auto d-flex align-center justify-center">
             <v-app-bar-nav-icon 
                 variant="text" 
@@ -8,7 +8,9 @@
             >
             </v-app-bar-nav-icon>
             <v-app-bar-title class="text-uppercase">
-                <span class="font-weight-bold">Arnaud rebel</span> <span class="text-indigo-lighten-1 font-weight-bold">dev</span>
+                <v-btn @click="goTo('#home')">
+                    <span class="font-weight-bold">Arnaud rebel</span> <span class="text-indigo-lighten-1 font-weight-bold">dev</span>
+                </v-btn>
             </v-app-bar-title>
             <template v-if="$vuetify.display.mdAndUp">
                 <v-btn 
@@ -25,12 +27,12 @@
         v-if="$vuetify.display.smAndDown"
         v-model="drawer"    
     >
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column pa-5">
             <v-btn 
-            :class="anchor.highlight && 'bg-indigo-lighten-1'" 
-            v-for="anchor in headerAnchors" 
-            @click="goTo(anchor.link, { offset: -100})"
-        >
+                :class="anchor.highlight && 'bg-indigo-lighten-1'" 
+                v-for="anchor in headerAnchors" 
+                @click="goTo(anchor.link, {duration: 1000, offset: -100})"
+            >
             {{ anchor.text }}
         </v-btn>
         </div>
@@ -46,7 +48,7 @@ const drawer = ref(false);
 
 const headerAnchors = ref([
     {
-        text: 'A propos',
+        text: 'Parcours',
         link: '#about',
         highlight: false
     },

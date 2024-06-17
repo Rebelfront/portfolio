@@ -7,7 +7,10 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"],
+      "@models/*": ["./src/models/*"],
+      "@components/*": ["src/components/*"],
+      "@imgs/*": ["src/assets/imgs/*"],
     },
     "resolveJsonModule": true,
     "types": [
@@ -25,6 +28,8 @@
     "skipLibCheck": true
   },
   "include": [
+    "**/*.ts",
+    "**/*.vue",
     "./src/typed-router.d.ts"
   ],
   "exclude": ["dist", "node_modules", "cypress"],

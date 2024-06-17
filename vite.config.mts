@@ -30,8 +30,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@imgs': fileURLToPath(new URL('./src/assets/imgs', import.meta.url)),
-      '@files': fileURLToPath(new URL('./src/assets/files', import.meta.url)),
+      '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+      '@models': fileURLToPath(new URL('./src/models', import.meta.url)),
+      '@imgs': fileURLToPath(new URL('./src/assets/imgs', import.meta.url))
     },
     extensions: [
       '.js',

@@ -16,8 +16,9 @@
 
 <script setup lang="ts">
     import { ref } from 'vue';
+    import { Skill } from '@/models/skill.model';
 
-    const skills = ref([
+    const skills = ref<Skill[]>([
         {
             iconClass: 'devicon-vuejs-plain-wordmark colored'
         },
