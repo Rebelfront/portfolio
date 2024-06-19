@@ -36,7 +36,7 @@
             description: "Technos: Vue.js 3 (composition API), Typescript, Vuetify, Vercel",
             image: introBg,
             liveUrl: null,
-            codeUrl: "https://www.magnolia.fr/"
+            codeUrl: "https://github.com/Rebelfront/portfolio"
         },
         {
             title: "Portfolio de musicien",

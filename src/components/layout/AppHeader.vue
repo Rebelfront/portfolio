@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar id="home">
+    <v-app-bar>
         <v-container class="mx-auto d-flex align-center justify-center">
             <v-app-bar-nav-icon 
                 variant="text" 
@@ -8,7 +8,7 @@
             >
             </v-app-bar-nav-icon>
             <v-app-bar-title class="text-uppercase">
-                <v-btn @click="goTo('#home')">
+                <v-btn @click="redirectToPageAndAnchor('/', '#home')">
                     <span class="font-weight-bold">Arnaud rebel</span>&nbsp;<span class="text-indigo-lighten-1 font-weight-bold">dev</span>
                 </v-btn>
             </v-app-bar-title>
@@ -16,7 +16,7 @@
                 <v-btn 
                     :class="anchor.highlight && 'bg-indigo-lighten-1'" 
                     v-for="anchor in headerAnchors" 
-                    @click="goTo(anchor.link, { offset: -100})"
+                    @click="redirectToPageAndAnchor('/', `${anchor.link}`)"
                 >
                     {{ anchor.text }}
                 </v-btn>
@@ -31,7 +31,7 @@
             <v-btn 
                 :class="anchor.highlight && 'bg-indigo-lighten-1'" 
                 v-for="anchor in headerAnchors" 
-                @click="goTo(anchor.link, {duration: 1000, offset: -100})"
+                @click="redirectToPageAndAnchor('/', `${anchor.link}`)"
             >
             {{ anchor.text }}
         </v-btn>
@@ -40,10 +40,9 @@
 </template>
 
 <script setup lang="ts">
+import { router } from '@/router';
 import { ref } from 'vue';
-import { useGoTo } from 'vuetify';
 
-const goTo = useGoTo();
 const drawer = ref(false);
 
 const headerAnchors = ref([
@@ -67,6 +66,10 @@ const headerAnchors = ref([
         link: '#contact',
         highlight: true
     },
-])
+]);
+
+const redirectToPageAndAnchor = (path: string, hash: string) => {
+    router.push({path, hash});
+};
 
 </script>
